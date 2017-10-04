@@ -1,0 +1,39 @@
+body {
+  background-color: black;
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#title {
+  text-align: center;
+  color: white;
+}
+
+svg {
+  margin-top: 2em;
+}
+
+rect:hover {
+  fill: #b02426;
+}
+
+.tick > text{
+  fill:white;
+}
+
+.tick > line {
+  stroke: white;
+}
+
+label {
+  position: absolute;
+  top: 10em;
+  right: 10em;
+  color: white;
+}
+
+label:nth-of-type(2) {
+  margin-top: 2em;
+}

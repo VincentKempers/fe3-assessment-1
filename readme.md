@@ -1,73 +1,75 @@
-# ![Assessment 1][banner]
+# Assessment
 
-This repository can be forked for [**assessment 1**][a1] of [Frontend 3][fe3]
-at [**@CMDA**][cmda].
+For my assessment I made a bar chart for the data of Top languages by number of speakers. I used the [bar chart](https://bl.ocks.org/mbostock/3885705) of @mbostock. 
 
-## TODO
+## Background
 
-*   [ ] [GitHub Pages](#github-pages)
-*   [ ] [Metadata](#metadata)
-*   [ ] [Workflow](#workflow)
-*   [ ] Replace this document in your fork with your own readme!
+The assessment is about working with data and cleaning it up so you can use it to your liking. I used the bar chart because it was the most fitting to my data. You have data for either axis and it is clear what language has the most and which doesn't.
 
-## GitHub Pages
+I wanted my data to work but wanted it to feel like it's alive. So i picked the bar chart that was subtle but made the data obvious.
 
-Set up [GitHub Pages][pages] for this fork through the **Settings** pane.  Use
-the **Master branch** as its source.
 
-## Metadata
+![Click on the CMD button to get this style.](preview.png)
 
-Edit the **description** and **url** of your repository.  Click on edit above
-the green Clone or download button and fill in your correct information.
+## What i had to do
 
-## Workflow
+The chart was made for [d3.v3](https://github.com/d3/d3/releases/v3.0.0) i had to refactor the code to [d3.v3](https://github.com/d3/d3/blob/master/API.md)
 
-How you go about your project is up to you other than that it must meet the
-given requirements.  The following steps may help to tackle this challenge
-though.
+-   `d3.v3` to `d3.v4`
+-   refactor `d3.scaleLinear()`
+-   refactor `d3.scaleOrdinal()`
+-   refactor `d3.extent()`
+-   refactor `d3.axisBottom() or d3.axisLeft()`
+-   refactor `time.format`
+-   refactor to my style of coding.
+-   Adjust the animation to make it work for `d3.v4`
 
-###### Explore
+### Style Used
 
-Explore the [data][].  Make sense of the rows, columns, and what they contain.
-Investigate interesting aspects and possible outcomes.  Figure out what type of
-chart you want and sketch your visualisation.
+I use single quotes for strings and every new piece of code gets a new line (for readability). I close every line of code but keep the DRY _(Don't Repeat Yourself)_ effect in tact.
 
-List the features needed to make your chart work and make sure they match our
-[rubric][].  For example, pie charts or donut charts often lack features needed
-to get good grades in the **application of subject matter** category.  You must
-compensate with other useful features to get a good grade in this case.
+For multiple variables I end on the latest line (in case you want to add more just `,` +  <button>enter</button> and add another one).
 
-Pick the most enticing data and copy it to your fork.
+The next example you see how I use a function. array and loop.  
+*   New line on every new entry in the array (same for objects).
+*   Close the array on a line of his own.
+*   Loop on the same line.
+*   Code to execute on the next.
+*   _Interested in de colors i used check out [dash-syntax for atom](https://github.com/cpsdqs/dash-syntax)_
 
-###### Process
+```js
+function myStyle() {
+  var arrayColors = [
+    '#ed9b50',
+    '#ffb91b',
+    '#5b85ff',
+    '#8c63d9',
+    '#dbe5ed',
+    '#4ebc6b',
+    '#f54784',
+    '#43c5e5',
+    '#46c999'
+  ];
 
-Describe the purpose and background of your visualisation in your fork’s readme.
-Portray your data and list the d3 features.
+  for (var i = 0; i < arrayColors.length; i++) {
+    console.log(arrayColors[i], 'colors');
+  };
+};
+```
 
-Start writing code.  Feel free to use example code found on the web but make
-sure to include correct citations.  Use inline code comments to describe
-anything of interest.  Don’t forget to document your process.
+### features
 
-###### Review
+[**d3 API**](https://github.com/d3/d3/blob/master/API.md)
+-   [`d3.axisBottom() or d3.axisLeft()`](https://github.com/d3/d3-axis/blob/master/README.md)
+-   [`d3.scaleOrdinal()`](https://github.com/d3/d3-3.x-api-reference/blob/master/Ordinal-Scales.md#ordinal)
+-   [`d3.scaleLinear()`](https://github.com/d3/d3-scale/blob/master/README.md#scaleLinear)
+-   [`.tickFormat(d3.formatPrefix('.0', 1e6))` (it looks alot like locale_format)](https://github.com/d3/d3-format#locale_format)
+-   [`.scaleBand()`](https://github.com/d3/d3-scale/blob/master/README.md#scaleBand)
+-   [`.rangeRound()`](https://github.com/d3/d3-scale/blob/master/README.md#continuous_rangeRound)
+-   [`d3.ascending()`](https://github.com/d3/d3-array/blob/master/README.md#ascending)
 
-Finish up your readme and review your project.  Audit the code and docs.
-Evaluate whether the project matches our [rubric][] and make changes where
-needed.
+### License
 
-Include anything you’re particularly proud of and mention anything that was
-exceptionally hard to accomplish in your readme to make sure lecturers don’t
-miss it!  🌟
+[The chart i used](https://bl.ocks.org/mbostock/3885705) is made by @mbostock (GPL-3.0).
 
-[banner]: https://cdn.rawgit.com/cmda-fe3/logo/3b150735/banner-assessment-1.svg
-
-[a1]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#description
-
-[data]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#data
-
-[rubric]: https://github.com/cmda-fe3/course-17-18/tree/master/assessment-1#rubric
-
-[fe3]: https://github.com/cmda-fe3
-
-[cmda]: https://github.com/cmda
-
-[pages]: https://pages.github.com
+[GPLv3](https://choosealicense.com/licenses/gpl-3.0/) Vincent Kempers 👨🏽‍💻
